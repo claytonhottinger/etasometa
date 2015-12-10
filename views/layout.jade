@@ -15,4 +15,7 @@ html(ng-app="theBest")
         a(ng-href="#/wishlist") Channel Wish List
 
 
-    block content
+    h1= title
+    p Welcome to #{title}
+
+    div(ng-view)

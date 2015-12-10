@@ -1,17 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/eta');
-
-var Channel = mongoose.model('Channel',{name: String,purpose: String});
+var model = require('../model/model')
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  return Channel.find({}).exec(function(err,channels){
-    if(err) throw new Error(err);
+  return model.find({}).exec(function(err,channels){
+    if(err) next(err);
     res.send(JSON.stringify(channels));
-    next();
   });
 });
 

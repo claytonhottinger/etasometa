@@ -19,11 +19,22 @@ app.controller('homeCtrl', ['$scope', '$http', function($scope, $http){
     method: 'get'
   }).then(function(response){
     $scope.channellist = response.data;
+    $scope.whatever = 2;
   });
-
-
-
-
-
-
 }]);
+
+app.controller('wishCtrl', ['$scope', '$http', function($scope, $http) {
+  $scope.channel = {};
+
+  $scope.submit = function() {
+    $http({
+      url: '/wishlist',
+      method: 'post',
+      data: $scope.channel
+    })
+  };
+}]);
+
+
+
+

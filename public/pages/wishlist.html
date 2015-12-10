@@ -1,11 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+<div>
+  <h1>Add your desired slack channel</h1>
+</div>
 
-</body>
+<form>
+  <label for="name">Channel Name:</label>
+  <input id="name" ng-model="channel.name" type="text" name="channelname">
+  <br/>
+  <label for="purpose">Channel Purpose:</label>
+  <input id="purpose" ng-model="channel.purpose" type="text" name="channelpurpose">
+  <br/>
+  <button ng-click="submit()" type="button">Submit</button>
 
-</html>
+</form>

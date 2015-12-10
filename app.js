@@ -4,7 +4,7 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var wishlist = require('./routes/wishlist');
 var routes = require('./routes/index');
 var channels = require('./routes/channels');
 
@@ -22,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/wishlist', wishlist);
 app.use('/', routes);
 app.use('/channels', channels);
 
